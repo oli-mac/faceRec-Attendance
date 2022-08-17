@@ -9,7 +9,7 @@ classroom attendance using openCv  face recognition library
 * [X] display the actual result 
 # creating Attendance project
 * [x] creating py File
-* [] import images and conver them to RGB
+* [x] import images and conver them to RGB
     * take the names from the image it self
 
 
