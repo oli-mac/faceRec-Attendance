@@ -48,13 +48,13 @@ while True:
     for encodeFace, FaceLoc in zip(encodeCurFrame, faceCurFrame):
         matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
         faceDistance = face_recognition.face_distance(encodeListKnown, encodeFace)
-        print(faceDistance)
+        # print(faceDistance)
         matchIndex = np.argmin(faceDistance)
 
 # Step 5: display bounding box and write the name     
         if matches[matchIndex]:
             name = classNames[matchIndex]
-            print(name)
+            # print(name)
             y1,x2,y2,x1 = FaceLoc
             y1,x2,y2,x1 = y1*4,x2*4,y2*4,x1*4
             cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
@@ -65,27 +65,9 @@ while True:
     cv2.imshow('Webcam',img)
     cv2.waitKey(0)
 
+# Step 5: Mark the Attendance
 
-# #detect the face   face location printes out 4 values Top, Right ,Bottom ,Left 
-# faceLoc = face_recognition.face_locations(imgElon)[0]
-# #encode the face we have detacted 
-# encodeElon = face_recognition.face_encodings(imgElon)[0]
 
-# cv2.rectangle(imgElon,(faceLoc[3],faceLoc[0]),(faceLoc[1],faceLoc[2]),(255,0,255),2)
-
-# # detect the face location printes out 4 values Top, Right ,Bottom ,Left 
-# faceLocTest = face_recognition.face_locations(imgTest)[0]
-# #encode the face we have detacted 
-# encodeTest = face_recognition.face_encodings(imgTest)[0]
-
-# cv2.rectangle(imgTest,(faceLocTest[3],faceLocTest[0]),(faceLocTest[1],faceLocTest[2]),(255,0,255),2)
-
-# # Comparing the faces and finding the distance between them
-
-# results = face_recognition.compare_faces([encodeElon],encodeTest)
-# #find the distance to get the best match
-# faceDist = face_recognition.face_distance([encodeElon],encodeTest)
-# print(results, faceDist)
 
 
 
