@@ -1,3 +1,4 @@
+from sre_constants import SUCCESS
 from unittest import result
 import cv2
 import numpy as np
@@ -31,6 +32,21 @@ def findEncodings(images):
 enco  = findEncodings(images)
 print('Encoding Complete')
 # Step 3: initialize the webcam
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    success, img =cap.reaad()
+    #reduse size of image
+    imgSmall = cv2.resize(img,(0,0),None,0.25,0.25)
+    imgSmall = cv2.cvtColor(imgSmall,cv2.COLOR_BGR2RGB)
+#we might find multiple faces on the web cam for that we calcualte the location of the faces
+    faceCurFrame = face_recognition.face_locations(imgSmall)
+    encodeCurFrame = face_recognition.face_encodings(imgSmall, faceCurFrame)
+
+# Step 3: finding matches
+
+
 # #detect the face   face location printes out 4 values Top, Right ,Bottom ,Left 
 # faceLoc = face_recognition.face_locations(imgElon)[0]
 # #encode the face we have detacted 
