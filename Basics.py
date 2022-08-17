@@ -9,7 +9,7 @@ import face_recognition
 imgElon = face_recognition.load_image_file('imagesBasic/Elon Musk.jpg')
 imgElon = cv2.cvtColor(imgElon,cv2.COLOR_BGR2RGB)
 
-imgTest = face_recognition.load_image_file('imagesBasic/Elon Test.jpg')
+imgTest = face_recognition.load_image_file('imagesBasic/Jeff Test.jpg')
 imgTest = cv2.cvtColor(imgTest,cv2.COLOR_BGR2RGB)
 
 #detect the face   face location printes out 4 values Top, Right ,Bottom ,Left 
@@ -34,6 +34,8 @@ faceDist = face_recognition.face_distance([encodeElon],encodeTest)
 print(results, faceDist)
 
 #display the actual result on the image
+cv2.putText(imgTest,f'{results} {round(faceDist[0],2)}',(50, 50),cv2.FONT_HERSHEY_COMPLEX,1,(0,0,255),2)
+
 
 cv2.imshow('Elon Musk', imgElon)
 cv2.imshow('Elon Test', imgTest)
