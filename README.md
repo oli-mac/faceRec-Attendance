@@ -14,4 +14,5 @@ classroom attendance using openCv  face recognition library
 * [x] encode the faces 
 * [X] initialize the webcam
 * [X] locate multiple faces on the web cam  
-* [] Finding Matches
+* [x] Finding Matches
+* [] display bounding box and write the name 

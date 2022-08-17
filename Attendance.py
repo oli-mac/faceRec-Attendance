@@ -29,14 +29,14 @@ def findEncodings(images):
     return encodeList
 
 
-enco  = findEncodings(images)
+encodeListKnown  = findEncodings(images)
 print('Encoding Complete')
 # Step 3: initialize the webcam
 
 cap = cv2.VideoCapture(0)
 
 while True:
-    success, img =cap.reaad()
+    success, img =cap.read()
     #reduse size of image
     imgSmall = cv2.resize(img,(0,0),None,0.25,0.25)
     imgSmall = cv2.cvtColor(imgSmall,cv2.COLOR_BGR2RGB)
@@ -44,7 +44,15 @@ while True:
     faceCurFrame = face_recognition.face_locations(imgSmall)
     encodeCurFrame = face_recognition.face_encodings(imgSmall, faceCurFrame)
 
-# Step 3: finding matches
+# Step 4: finding matches
+    for encodeFace, FaceLoc in zip(encodeCurFrame, faceCurFrame):
+        matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
+        faceDistance = face_recognition.face_distance(encodeListKnown, encodeFace)
+        print(faceDistance)
+        matchIndex = np.argmin(faceDistance)
+
+# Step 5: display bounding box and write the name     
+
 
 
 # #detect the face   face location printes out 4 values Top, Right ,Bottom ,Left 
