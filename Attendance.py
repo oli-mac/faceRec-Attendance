@@ -52,7 +52,9 @@ while True:
         matchIndex = np.argmin(faceDistance)
 
 # Step 5: display bounding box and write the name     
-
+        if matches[matchIndex]:
+            name = classNames[matchIndex]
+            print(name)
 
 
 # #detect the face   face location printes out 4 values Top, Right ,Bottom ,Left 
