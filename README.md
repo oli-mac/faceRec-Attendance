@@ -1,5 +1,5 @@
 # faceRec-Attendance
-classroom attendance using openCv  face recognition library
+classroom attendance using openCv  face-recognition library
 # Understand the basics
 * [x] import the image
 * [x] detect the face location 
