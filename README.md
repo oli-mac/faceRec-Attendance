@@ -11,8 +11,5 @@ classroom attendance using openCv  face recognition library
 * [x] creating py File
 * [x] import images and conver them to RGB
     * take the names from the image it self
-
-
-
-
-
+* [x] encode the faces 
+* [] initialize the webcam
