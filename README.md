@@ -7,8 +7,9 @@ classroom attendance using openCv  face recognition library
 * [X] Compare the faces and find the distance between them
 * [X] Calculate the distance to get the best match
 * [X] display the actual result 
-
-
+# creating Attendance project
+* [x] creating py File
+import images and conver them to RGB
 
 
 
