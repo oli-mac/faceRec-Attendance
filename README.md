@@ -17,3 +17,4 @@ classroom attendance using openCv  face-recognition library
 * [x] Finding Matches
 * [x] display bounding box and write the name 
 * [x] Mark the Attendance
+# Done
